@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desktop - Jeu de Course</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="header">
+      <h1>Racing Game</h1>
+      <div class="stats">
+        <div class="stat">
+          <span class="label">Score:</span>
+          <span class="value" id="score">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Vitesse:</span>
+          <span class="value" id="speed">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Latence:</span>
+          <span class="value" id="latency">--</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="connection-status" id="connectionStatus">
+      <div class="status-dot"></div>
+      <span id="statusText">Connexion au serveur...</span>
+    </div>
+
+    <div class="qr-section" id="qrSection">
+      <div class="qr-container">
+        <h3>Scannez pour connecter votre mobile</h3>
+        <img id="qrCode" src="/placeholder.svg" alt="QR Code">
+        <p class="qr-url" id="qrUrl"></p>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="controls-info" id="controlsInfo">
+      <p>En attente d'un contrôleur mobile...</p>
+      <p class="small">Scannez le QR code ci-dessus avec votre téléphone</p>
+    </div>
+
+    <div class="game-over" id="gameOver">
+      <h2>Game Over!</h2>
+      <p>Score final: <span id="finalScore">0</span></p>
+      <button onclick="game.restart()">Recommencer</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

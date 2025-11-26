@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu de Course Mobile</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 2.5em;
+    }
+
+    .subtitle {
+      color: #666;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1.1em;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .option-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: white;
+    }
+
+    .option-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    .option-card .icon {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    .option-card h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .option-card p {
+      font-size: 0.9em;
+      opacity: 0.9;
+    }
+
+    .info {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .info h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .info ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info li {
+      color: #666;
+      padding: 5px 0;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .info li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .options {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🏎️ Racing Game</h1>
+    <p class="subtitle">Jeu de course contrôlé par mobile</p>
+
+    <div class="options">
+      <a href="/desktop" class="option-card">
+        <div class="icon">🖥️</div>
+        <h2>Desktop</h2>
+        <p>Affichage du jeu</p>
+      </a>
+
+      <a href="/mobile" class="option-card">
+        <div class="icon">📱</div>
+        <h2>Mobile</h2>
+        <p>Contrôleur</p>
+      </a>
+    </div>
+
+    <div class="info">
+      <h3>Comment jouer ?</h3>
+      <ul>
+        <li>Ouvrez la vue Desktop sur votre ordinateur</li>
+        <li>Scannez le QR code avec votre téléphone</li>
+        <li>Utilisez les boutons pour contrôler la voiture</li>
+        <li>Évitez les bords de la route !</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

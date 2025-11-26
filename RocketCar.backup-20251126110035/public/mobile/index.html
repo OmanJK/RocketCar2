@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Mobile Controller - Racing Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="mobile-container">
+    <div class="header">
+      <h1>Controller</h1>
+      <div class="connection-status" id="connectionStatus">
+        <div class="status-dot"></div>
+        <span id="statusText">Connexion...</span>
+      </div>
+    </div>
+
+    <div class="game-info" id="gameInfo">
+      <div class="info-item">
+        <span class="label">Score</span>
+        <span class="value" id="score">0</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Vitesse</span>
+        <span class="value" id="speed">0</span>
+      </div>
+    </div>
+
+    <div class="connect-section" id="connectSection">
+      <div class="connect-card">
+        <h2>Connexion au jeu</h2>
+        <p>Assurez-vous d'être sur le même réseau que l'ordinateur</p>
+        <button id="autoConnectBtn" class="btn-primary">
+          Connexion automatique
+        </button>
+      </div>
+    </div>
+
+    <div class="controls-section" id="controlsSection" style="display: none;">
+      <div class="controls-layout">
+        <!-- Bouton Accélérer -->
+        <div class="accelerate-zone">
+          <button id="accelerateBtn" class="control-btn accelerate-btn">
+            <div class="btn-icon">⬆️</div>
+            <div class="btn-label">Accélérer</div>
+          </button>
+        </div>
+
+        <!-- Boutons Direction -->
+        <div class="direction-zone">
+          <button id="leftBtn" class="control-btn direction-btn">
+            <div class="btn-icon">⬅️</div>
+            <div class="btn-label">Gauche</div>
+          </button>
+          <button id="rightBtn" class="control-btn direction-btn">
+            <div class="btn-icon">➡️</div>
+            <div class="btn-label">Droite</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="instructions">
+        <p>Maintenez les boutons appuyés pour contrôler</p>
+      </div>
+    </div>
+
+    <div class="disconnected-overlay" id="disconnectedOverlay" style="display: none;">
+      <div class="overlay-content">
+        <h2>Déconnecté</h2>
+        <p>La connexion avec le jeu a été perdue</p>
+        <button id="reconnectBtn" class="btn-primary">Reconnecter</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="controller.js"></script>
+</body>
+</html>
